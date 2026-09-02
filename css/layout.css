@@ -1,0 +1,40 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 96px 24px 120px;
+}
+
+.page__header {
+  margin-bottom: 40px;
+}
+
+.page__icon {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.page__title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.page__subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 76px 16px 100px;
+  }
+
+  .page__title {
+    font-size: 1.5rem;
+  }
+}
