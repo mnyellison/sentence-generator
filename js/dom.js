@@ -5,6 +5,5 @@ export const el = {
   quoteCard: document.getElementById("quoteCard"),
   quoteText: document.getElementById("quoteText"),
   quoteAuthor: document.getElementById("quoteAuthor"),
-  quoteTag: document.getElementById("quoteTag"),
   generateBtn: document.getElementById("generateBtn"),
 };
