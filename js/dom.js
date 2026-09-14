@@ -6,4 +6,6 @@ export const el = {
   quoteText: document.getElementById("quoteText"),
   quoteAuthor: document.getElementById("quoteAuthor"),
   generateBtn: document.getElementById("generateBtn"),
+  copyBtn: document.getElementById("copyBtn"),
+  toast: document.getElementById("toast"),
 };

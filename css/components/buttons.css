@@ -17,6 +17,10 @@
   color: var(--text-primary);
 }
 
+.button:active {
+  opacity: 0.7;
+}
+
 .button--primary {
   background: var(--text-primary);
   color: var(--bg);
@@ -31,12 +35,23 @@ html[data-theme="dark"] .button--primary {
   opacity: 0.85;
 }
 
-.button--primary:active {
-  opacity: 0.7;
+.button--copy:hover {
+  background: var(--bg-secondary);
+}
+
+.button--copy:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button--copy.button--copy--success {
+  color: var(--success);
+  border-color: var(--success);
 }
 
 @media (max-width: 600px) {
-  .button--primary {
+  .button--primary,
+  .button--copy {
     justify-content: center;
   }
 }

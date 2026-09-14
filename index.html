@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/components/banner.css" />
     <link rel="stylesheet" href="css/components/quote-card.css" />
     <link rel="stylesheet" href="css/components/buttons.css" />
+    <link rel="stylesheet" href="css/components/toast.css" />
     <script
       src="https://kit.fontawesome.com/a16984c516.js"
       crossorigin="anonymous"
@@ -69,6 +70,15 @@
       <button class="button button--primary" id="generateBtn" type="button">
         <i class="fa-solid fa-arrows-rotate"></i> Gerar nova frase
       </button>
+
+      <button class="button button--copy" id="copyBtn" type="button" disabled>
+        <i class="fa-solid fa-copy"></i> Copiar frase
+      </button>
     </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <i class="fa-solid fa-check toast__icon" aria-hidden="true"></i> Frase
+      copiada!
+    </div>
   </body>
 </html>
