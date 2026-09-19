@@ -28,6 +28,11 @@
   pointer-events: auto;
 }
 
+.toast--error {
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
 .toast__icon {
   display: inline-flex;
   font-size: 0.9rem;

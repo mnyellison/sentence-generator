@@ -41,6 +41,13 @@ export async function copyQuote() {
       el.toast.classList.remove("toast--visible");
     }, 2000);
   } catch (err) {
-    console.error("Falha ao copiar o texto: ", err);
+    el.toast.innerHTML =
+      '<i class="fa-solid fa-triangle-exclamation"></i> Erro ao tentar copiar';
+    el.toast.classList.add("toast--visible", "toast--error");
+
+    setTimeout(function () {
+      el.toast.classList.remove("toast--visible", "toast--error");
+      el.toast.innerHTML = "";
+    }, 2000);
   }
 }

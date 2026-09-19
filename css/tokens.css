@@ -4,6 +4,7 @@
   --text-primary: #37352f;
   --text-secondary: #787774;
   --success: #2f9e44;
+  --danger: #e03131;
   --border: rgba(55, 53, 47, 0.09);
   --hover: rgba(55, 53, 47, 0.04);
 
@@ -29,6 +30,7 @@ html[data-theme="dark"] {
   --text-primary: #d4d4d4;
   --text-secondary: #9b9b9b;
   --success: #4dab6f;
+  --danger: #f0625f;
   --border: rgba(255, 255, 255, 0.094);
   --hover: rgba(255, 255, 255, 0.055);
   color-scheme: dark;
