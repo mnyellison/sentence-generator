@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/components/banner.css" />
     <link rel="stylesheet" href="css/components/quote-card.css" />
     <link rel="stylesheet" href="css/components/buttons.css" />
+    <link rel="stylesheet" href="css/components/favorites.css" />
     <link rel="stylesheet" href="css/components/toast.css" />
     <script
       src="https://kit.fontawesome.com/a16984c516.js"
@@ -65,6 +66,23 @@
           </p>
           <p class="quote-card__author" id="quoteAuthor">&nbsp;</p>
         </div>
+
+        <button
+          class="quote-card__favorite"
+          id="favoriteBtn"
+          type="button"
+          aria-pressed="false"
+          aria-label="Adicionar aos favoritos"
+          title="Favoritar"
+          disabled
+        >
+          <span class="quote-card__star quote-card__star--outline">
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="quote-card__star quote-card__star--filled">
+            <i class="fa-solid fa-star"></i>
+          </span>
+        </button>
       </section>
 
       <button class="button button--primary" id="generateBtn" type="button">
@@ -74,6 +92,21 @@
       <button class="button button--copy" id="copyBtn" type="button" disabled>
         <i class="fa-solid fa-copy"></i> Copiar frase
       </button>
+
+      <!-- Seção de favoritos -->
+      <section class="favorites" aria-labelledby="favoritesTitle">
+        <header class="favorites__header">
+          <h2 class="favorites__title" id="favoritesTitle">Favoritas</h2>
+          <span class="favorites__count" id="favoritesCount">0</span>
+        </header>
+
+        <p class="favorites__empty" id="favoritesEmpty">
+          Nenhuma favorita ainda. Clique na estrela de uma frase para guardá-la
+          aqui.
+        </p>
+
+        <ul class="favorites__list" id="favoritesList"></ul>
+      </section>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite">

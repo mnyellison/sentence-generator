@@ -1,0 +1,142 @@
+.favorites {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.favorites__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.favorites__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.favorites__count {
+  padding: 0 6px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.favorites__empty {
+  margin: 0;
+  padding: 8px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+.favorites__empty[hidden] {
+  display: none;
+}
+
+.favorites__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Item */
+.favorite-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 -8px;
+  padding: 10px 8px;
+  border-radius: var(--radius-md);
+  transition: background var(--transition);
+}
+
+.favorite-item:hover,
+.favorite-item:focus-within {
+  background: var(--hover);
+}
+
+.favorite-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.favorite-item__text {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.favorite-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.favorite-item__author {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+/* Ações aparecem no hover, como nos blocos do Notion */
+.favorite-item__actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.favorite-item:hover .favorite-item__actions,
+.favorite-item:focus-within .favorite-item__actions {
+  opacity: 1;
+}
+
+/* Desativa o hover no mobile */
+@media (hover: none), (pointer: coarse) {
+  .favorite-item__actions {
+    opacity: 1;
+  }
+
+  .favorite-item__action {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.favorite-item__action {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.favorite-item__action:hover {
+  background: var(--hover);
+  color: var(--text-primary);
+}
+
+.favorite-item__action--remove:hover {
+  color: var(--danger);
+}
+
+.favorite-item__action:focus-visible {
+  outline: 2px solid var(--text-secondary);
+  outline-offset: 2px;
+}

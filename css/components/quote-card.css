@@ -69,6 +69,65 @@
   animation: fade-in 0.2s ease-in-out;
 }
 
+.quote-card {
+  position: relative;
+}
+
+.quote-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.quote-card__favorite {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.quote-card__favorite:hover:not(:disabled) {
+  background: var(--hover);
+  color: var(--text-primary);
+}
+
+.quote-card__favorite:focus-visible {
+  outline: 2px solid var(--text-secondary);
+  outline-offset: 2px;
+}
+
+.quote-card__favorite:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quote-card__star--filled {
+  display: none;
+}
+
+.quote-card__favorite[aria-pressed="true"] {
+  color: var(--favorite);
+}
+.quote-card__favorite[aria-pressed="true"] .quote-card__star--outline {
+  display: none;
+}
+.quote-card__favorite[aria-pressed="true"] .quote-card__star--filled {
+  display: inline;
+}
+
 @keyframes pulse {
   0%,
   100% {
