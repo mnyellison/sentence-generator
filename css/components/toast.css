@@ -1,36 +1,25 @@
 .toast {
   position: fixed;
-  left: 50%;
   bottom: 24px;
-  transform: translate(-50%, 12px);
+  left: 50%;
+  z-index: 100;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
+  border: 1px solid var(--text-primary);
   border-radius: var(--radius-sm);
   background: var(--text-primary);
   color: var(--bg);
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 500;
-  border: 1px solid var(--text-primary);
   opacity: 0;
+  transform: translate(-50%, 12px);
   pointer-events: none;
   transition:
     opacity var(--transition),
     transform var(--transition);
-  z-index: 100;
-}
-
-.toast--visible {
-  opacity: 1;
-  transform: translate(-50%, 0);
-  pointer-events: auto;
-}
-
-.toast--error {
-  background: var(--danger);
-  border-color: var(--danger);
 }
 
 .toast__icon {
@@ -42,13 +31,24 @@
   white-space: nowrap;
 }
 
+.toast--visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.toast--error {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
 @media (max-width: 600px) {
   .toast {
-    left: 16px;
     right: 16px;
     bottom: 16px;
-    transform: translateY(12px);
+    left: 16px;
     justify-content: center;
+    transform: translateY(12px);
   }
 
   .toast--visible {

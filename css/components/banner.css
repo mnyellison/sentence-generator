@@ -2,18 +2,14 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  background: var(--tag-yellow-bg);
-  color: var(--tag-yellow-text);
+  margin-bottom: 20px;
+  padding: 10px 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 10px 14px;
+  background: var(--tag-yellow-bg);
+  color: var(--tag-yellow-text);
   font-size: 0.875rem;
-  margin-bottom: 20px;
-  animation: fade-in 0.15s ease-in-out; /* fade-in definido em quote-card.css */
-}
-
-.banner[hidden] {
-  display: none;
+  animation: fade-in 0.15s ease-in-out; /* keyframes em base.css */
 }
 
 .banner__icon {
