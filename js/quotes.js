@@ -1,6 +1,8 @@
 import { LOCAL_QUOTES } from "./data/quotes.js";
 import { el } from "./dom.js";
 
+const TOAST_DURATION = 2000;
+let toastTimeoutId; // Guarda a referência do timer atual
 let lastIndice = null;
 
 function randomQuote() {
@@ -27,6 +29,18 @@ export function generateQuote() {
   el.copyBtn.removeAttribute("disabled");
 }
 
+function showToast(message, iconClass, isError = false) {
+  clearTimeout(toastTimeoutId);
+
+  el.toast.innerHTML = `<i class="fa-solid ${iconClass} toast__icon" aria-hidden="true"></i> ${message}`;
+  el.toast.classList.add("toast--visible");
+  el.toast.classList.toggle("toast--error", isError);
+
+  toastTimeoutId = setTimeout(function () {
+    el.toast.classList.remove("toast--visible");
+  }, TOAST_DURATION);
+}
+
 export async function copyQuote() {
   const text = el.quoteText.textContent;
   const author = el.quoteAuthor.textContent;
@@ -34,20 +48,12 @@ export async function copyQuote() {
   try {
     await navigator.clipboard.writeText(`"${text}" - ${author}`);
     el.copyBtn.classList.add("button--copy--success");
-    el.toast.classList.add("toast--visible");
+    showToast("Frase copiada!", "fa-check");
 
     setTimeout(function () {
       el.copyBtn.classList.remove("button--copy--success");
-      el.toast.classList.remove("toast--visible");
-    }, 2000);
+    }, TOAST_DURATION);
   } catch (err) {
-    el.toast.innerHTML =
-      '<i class="fa-solid fa-triangle-exclamation"></i> Erro ao tentar copiar';
-    el.toast.classList.add("toast--visible", "toast--error");
-
-    setTimeout(function () {
-      el.toast.classList.remove("toast--visible", "toast--error");
-      el.toast.innerHTML = "";
-    }, 2000);
+    showToast("Erro ao tentar copiar!", "fa-triangle-exclamation", true);
   }
 }
